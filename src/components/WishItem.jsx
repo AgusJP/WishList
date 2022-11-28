@@ -2,8 +2,8 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { Draggable } from 'react-beautiful-dnd';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { Draggable } from 'react-beautiful-dnd';
 
 import '../styles/wishItem.css';
 
@@ -54,7 +54,6 @@ const WishItem = ({
                   onChange={handleToggleWishDone}
                   checked={wishDone}
                 />
-
                 <label
                   className={wishDone ? 'line-through' : 'none'}
                   htmlFor={idv4}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
 import { Droppable } from 'react-beautiful-dnd';
 import WishItem from './WishItem.jsx';
-import ListGroup from 'react-bootstrap/ListGroup';
 
 import '../styles/WishSearch.css';
 
@@ -11,7 +11,7 @@ function WishSearch({ params: { wishes, setWishes, toggleWishDone } }) {
 
   const handleChange = e => {
     setSearchTerm(e.target.value);
-    filtrar(e.target.value);
+    filterSearch(e.target.value);
   };
 
   const handleDelete = id => {
@@ -33,7 +33,7 @@ function WishSearch({ params: { wishes, setWishes, toggleWishDone } }) {
     setWishes(editedWishes);
   };
 
-  const filtrar = searchTerm => {
+  const filterSearch = searchTerm => {
     const resultadosBusqueda = wishes.filter(element =>
       element.wishText.toLowerCase().includes(searchTerm.toLowerCase())
     );

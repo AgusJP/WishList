@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import '../styles/wishInput.css';
 
-const WishInput = ({ state }) => {
+const WishInput = ({ params: { wishes, setWishes } }) => {
   const wishInput = useRef();
 
   const handleOnClick = e => {
@@ -15,7 +15,7 @@ const WishInput = ({ state }) => {
       wishText: wishInput.current.value,
       wishDone: false,
     };
-    state.setWishes([...state.wishes, auxWish]);
+    setWishes([...wishes, auxWish]);
 
     wishInput.current.value = null;
     wishInput.current.autofocus = true;
@@ -52,5 +52,8 @@ const WishInput = ({ state }) => {
     </form>
   );
 };
+
+// Definición de los propTypes.
+
 
 export default WishInput;
