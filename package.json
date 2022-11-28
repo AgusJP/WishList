@@ -9,10 +9,12 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "lint": "eslint --fix src/**/*.{js,jsx}",
-    "docs": "jsdoc -R ./README.md -d ./doc ./src/"
+    "docs": "jsdoc -R ./README.md -d ./doc ./src/components"
   },
   "dependencies": {
     "bootstrap": "^5.2.2",
+    "jsdoc": "^4.0.0",
+    "proptypes": "^1.1.0",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
     "react-bootstrap": "^2.6.0",

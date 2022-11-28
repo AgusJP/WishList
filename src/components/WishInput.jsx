@@ -1,12 +1,24 @@
 import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-
 import '../styles/wishInput.css';
 
+/**
+ * WishInput Component.
+ * @param { Object } params - Object containing the wishes state and its function to modify it.
+ * @param { Object[] } wishes - State.
+ * @param { String } wishes[].id - Identifier of a wish.
+ * @param { String } wishes[].wishText - Text of a wish.
+ * @param { Boolean } wishes[].wishDone - Done/Pending wish.
+ * @param { Function } setWishes - Function that modifies the state.
+ * @returns - The form in charge of creating a new wish formed by a text field and the submit button.
+ */
 const WishInput = ({ params: { wishes, setWishes } }) => {
+  // Reference to the form input.
   const wishInput = useRef();
 
-  const handleOnClick = e => {
+  // Function responsible to create a new wish.
+  const handleOnCreate = e => {
     e.preventDefault();
     if (wishInput.current.value === '') return;
 
@@ -22,7 +34,7 @@ const WishInput = ({ params: { wishes, setWishes } }) => {
   };
 
   return (
-    <form className='container-wishInput' onSubmit={handleOnClick}>
+    <form className='container-wishInput' onSubmit={handleOnCreate}>
       <input
         ref={wishInput}
         type='text'
@@ -30,7 +42,7 @@ const WishInput = ({ params: { wishes, setWishes } }) => {
         className='create-input'
         placeholder='Añadir deseo...'
       />
-      <button className='btn-create' type='button' onClick={handleOnClick}>
+      <button className='btn-create' type='button' onClick={handleOnCreate}>
         <div className='svg-wrapper-1'>
           <div className='svg-wrapper'>
             <svg
@@ -53,7 +65,12 @@ const WishInput = ({ params: { wishes, setWishes } }) => {
   );
 };
 
-// Definición de los propTypes.
-
+// Definition of propTypes.
+WishInput.propTypes = {
+  params: PropTypes.shape({
+    wishes: PropTypes.array.isRequired,
+    setWishes: PropTypes.func.isRequired,
+  }),
+};
 
 export default WishInput;

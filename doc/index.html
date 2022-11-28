@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>Desarrolo Web en Entorno Cliente</h1>
+<h2>Proyecto WishList (Preview)</h2>
+<img src="../assets/WishList.png" alt="WhisList"/>
+<p><a href="https://github.com/AgusJP">Agustín Jiménez Polonio</a></p>
+<h2>Índice</h2>
+<ul>
+<li><a href="#id1">Descripción del proyecto</a></li>
+<li><a href="#id2">Requisitos del proyecto</a></li>
+<li><a href="#id3">Instalación en local</a></li>
+<li><a href="#id4">Manual de uso</a></li>
+<li><a href="#id5">Licencia</a></li>
+</ul>
+<br>
+<h1>Descripcion del proyecto. <a name="id1"></a></h1>
+<p>My WishList trata de una Aplicación Web creada con el framework React para gestionar una lista de deseos.
+Consta de diferentes funcionalidades como poder crear, eliminar, editar, ordenar... tus deseos de la manera que
+más te convenga.</p>
+<br>
+<h1>Requisitos del proyecto. <a name="id2"></a></h1>
+<ul>
+<li>Incluir alguna imagen en la cabecera a modo de logo de la aplicación.</li>
+<li>Mostrar una lista de deseos con un checkbox que permita marcar el deseo como completado. Una vez marcado el deseo debe mostrarse diferente al resto, por ejemplo tachando el texto.</li>
+<li>Permitir añadir deseos nuevos simplemente pulsando la tecla intro en el campo de texto.</li>
+<li>Añadir un botón que también sirva para añadir el texto del nuevo deseo a la lista.</li>
+<li>Almacenar deseos en el almacenamiento local del navegador y recuperarlos automáticamente al abrir la aplicación.</li>
+<li>Eliminar un deseo concreto de la lista.</li>
+<li>Editar un deseo concreto de la lista, mediante la edición en línea del texto, mediante un modal, etc.</li>
+<li>Reordenar los deseos de la lista, arrastrando los deseos, mediante iconos para subir o bajar el deseo, etc.</li>
+<li>Buscar deseos, la lista se filtrará mostrando sólo los que correspondan con la búsqueda. Incluir algún proceso para eliminar esa búsqueda y que vuelvan a aparecer todos los deseos.</li>
+</ul>
+<br>
+<h1>Pasos para la instalación en local. <a name="id3"></a></h1>
+<p>En primer lugar tendríamos que tener instalado en nuestro equipo Nodejs, para así disponer de su gestor de paquetes npm.</p>
+<p>Una vez instalado node, una forma de tener el código del repositorio en nuestro equipo, podría ser clonándolo con la siguiente instrucción:</p>
+<pre class="prettyprint source"><code>git clone https://github.com/AgusJP/WishList.git
+</code></pre>
+<p>Una vez clonado el repositorio faltaría instalar todas las dependencias que en este se incluyen. Todos los comandos mostrados a partir de este momento se deberan ejecutar dentro de la carpeta contenedora del mismo.</p>
+<pre class="prettyprint source"><code>npm install
+</code></pre>
+<p>Una vez ejecutado este comando la Aplicación estaría preparada para su correcto funcionamiento.</p>
+<p>Para generar la documentación del proyecto tendremos que ejecutar el siguiente comando previamente configurado para su correcto funcionamiento en package.json (&quot;docs&quot;: &quot;jsdoc -R ./README.md -d ./doc ./src/&quot;)</p>
+<pre class="prettyprint source"><code>npm run docs
+</code></pre>
+ <br>
+<h1>¿Cómo ejecuto el proyecto? <a name="id4"></a></h1>
+<p>Una vez tengamos todas las dependencia instaladas, iniciamos el proyecto con el siguiente comando:</p>
+<pre class="prettyprint source"><code>npm run start
+</code></pre>
+<p>Si queremos construir una versión en producción utilizaremos este comando:</p>
+<pre class="prettyprint source"><code>npm run build
+</code></pre>
+<p>Este comando nos generará un código en producción dentro de una carpeta dist. Si queremos ejecutar este código de producción como una pequeña demo ejecutaremos el siguiente comando:</p>
+<pre class="prettyprint source"><code>npm run preview
+</code></pre>
+ <br>
+<h1>Licencia (MIT License)<a name="id5" ></a></h1>
+<p>Una licencia permisiva breve y simple con condiciones que solo requieren la preservación de los avisos de derechos de autor y licencia. Los trabajos con licencia, las modificaciones y los trabajos más grandes pueden distribuirse bajo diferentes términos y sin código fuente.</p>
+<h2>Con esta licencia está permitido:</h2>
+<ul>
+<li>Uso comercial.</li>
+<li>Modificación.</li>
+<li>Distribución.</li>
+<li>Uso privado.</li>
+</ul>
+<h2>Limitaciones:</h2>
+<ul>
+<li>Responsabilidad</li>
+<li>Garantía</li>
+</ul>
+<h1>Author</h1>
+<p><a href="https://github.com/AgusJP">Agustín Jiménez Polonio</a></p>
+<br></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#NavBar">NavBar</a></li><li><a href="global.html#WishInput">WishInput</a></li><li><a href="global.html#WishItem">WishItem</a></li><li><a href="global.html#WishList">WishList</a></li><li><a href="global.html#WishSearch">WishSearch</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Mon Nov 28 2022 23:02:27 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
