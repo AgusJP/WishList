@@ -2,15 +2,11 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { GrDrag } from 'react-icons/Gr';
 import { Draggable } from 'react-beautiful-dnd';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 import '../styles/wishItem.css';
 
-/**
- * Manage a wish list item
- * @param {wish} - Single wish
- * @returns HTML with a WishItem
- */
 const WishItem = ({
   wish,
   index,
@@ -44,32 +40,38 @@ const WishItem = ({
     <>
       <Draggable key={idv4} draggableId={idv4} index={index}>
         {draggableProvided => (
-          <li
+          <ListGroup.Item
             {...draggableProvided.draggableProps}
             ref={draggableProvided.innerRef}
             {...draggableProvided.dragHandleProps}
           >
-            <GrDrag />
-            <input
-              id={idv4}
-              type='checkbox'
-              onChange={handleToggleWishDone}
-              checked={wishDone}
-            />
-            <label
-              className={wishDone ? 'line-through' : 'none'}
-              htmlFor={idv4}
-            >
-              {wishText}
-            </label>
+            <div className='container-item'>
+              <div>
+                <input
+                  className='checkbox-item'
+                  id={idv4}
+                  type='checkbox'
+                  onChange={handleToggleWishDone}
+                  checked={wishDone}
+                />
 
-            <Button variant='danger' onClick={() => handleDelete(idv4)}>
-              Eliminar
-            </Button>
-            <Button variant='primary' onClick={handleShow}>
-              Editar
-            </Button>
-          </li>
+                <label
+                  className={wishDone ? 'line-through' : 'none'}
+                  htmlFor={idv4}
+                >
+                  {wishText}
+                </label>
+              </div>
+              <div className='buttons'>
+                <Button variant='danger' onClick={() => handleDelete(idv4)}>
+                  Eliminar
+                </Button>
+                <Button variant='primary' onClick={handleShow}>
+                  Editar
+                </Button>
+              </div>
+            </div>
+          </ListGroup.Item>
         )}
       </Draggable>
       <Modal
@@ -79,7 +81,7 @@ const WishItem = ({
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Editando Deseo</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <input
@@ -88,6 +90,7 @@ const WishItem = ({
             defaultChecked={wishDone}
           />
           <input
+            className='editInput'
             ref={wishEditInput}
             autoFocus
             type='text'
@@ -96,7 +99,7 @@ const WishItem = ({
         </Modal.Body>
         <Modal.Footer>
           <Button variant='secondary' onClick={handleClose}>
-            Close
+            Salir
           </Button>
           <Button variant='primary' onClick={handleOnEdit}>
             Editar

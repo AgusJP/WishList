@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import WishInput from './WishInput.jsx';
 import { DragDropContext } from 'react-beautiful-dnd';
+import NavBar from './NavBar';
+import WishInput from './WishInput.jsx';
 import WishSearch from './WishSearch.jsx';
 
 const WishList = () => {
@@ -49,6 +50,7 @@ const WishList = () => {
 
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
+      <NavBar />
       <WishInput state={{ wishes, setWishes }} />
       <WishSearch params={{ wishes, setWishes, toggleWishDone }} />
     </DragDropContext>

@@ -5,3 +5,18 @@
 ul {
   list-style: none;
 }
+
+.container-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.checkbox-item {
+  margin-right: 10px;
+}
